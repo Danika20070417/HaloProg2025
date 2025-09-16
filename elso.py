@@ -1,35 +1,53 @@
+"""----------------------------------------------
+    EGYSZÁM JÁTÉK
+----------------------------------------------"""
+
 import random
 
 
-#lista létrehozása
+# Lista létrehozása
 szamok = []
 
-#lista feltöltése 10 db random két jegyű egész számokkal
+# Kitalálandó számok listájának feltöltése 100 db, random kétjegyű egész számmal
 for i in range(100):
     szam = random.randint(10, 99)
     szamok.append(szam)
 
-#Ellenőrzés
+# Ellenőrzés
 print(szamok)
 
 
-#EGYSZÁM JÁTÉK
+# Változók létrehozása statisztika készítéshez
 jatek_szam = 0
-nem_talalDB = 0
+nem_talaldDB = 0
 
-kitalalando_szam = szamok[random.randint(len(szamok))]
+# A kitalálandó szám kiválasztása a listából
+kitalalando_szam = szamok[random.randint(0, len(szamok))]
 
-tipp = int(input("Tipped? (egész szám):"))
 
-while(tipp != kitalalando_szam):
-    tipp = int(input("Tipped? (egész szám):"))
-    
-print("Kitaláltad a kitalálandó számot!")
+# A JÁTÉK ---------------------------------------
+kitalalando_szam = 12
 
-folytatas = input("Akarsz-e még játszani? (I/N)")
+jatszol = True
 
-if(folytatas == "I"):
-    # ???
-    aa=1
-else:
-    exit()
+while(jatszol):    
+    tipp_sz = input("Tipped? (egész szám): ").strip()
+    if(tipp_sz.isdecimal()):
+        tipp = int(tipp_sz)
+    else:
+        print("Egész számmal játsz!")
+        continue
+
+    while(tipp != kitalalando_szam):
+        tipp_sz = input("Tipped? (egész szám): ").strip()
+        if(tipp_sz.isdecimal()):
+            tipp = int(tipp_sz)
+        else:
+            print("Egész számmal játsz!")
+            continue
+
+    print("Kitaláltad a kitalálandó számot!")
+
+    folytatas = input("Akarsz-e még játszani? [I/N]")
+    if(folytatas == "N"):
+        jatszol = False
