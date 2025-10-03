@@ -42,4 +42,7 @@ print(f"Pontszámok átlaga: {pontszam/db}")
 
 # 2. Mi a bekért versenyző adatai?
 pilota = input("Kérek egy pilótát:")
-while sor[0] != pilota:
+cv = 1
+while verseny_adatok[cv].split(",")[0]!=pilota:
+    cv+=1
+print(verseny_adatok[cv])
