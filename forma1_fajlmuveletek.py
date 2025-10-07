@@ -46,3 +46,13 @@ cv = 1
 while verseny_adatok[cv].split(",")[0]!=pilota:
     cv+=1
 print(verseny_adatok[cv])
+
+# 3. Hány versenyző teljesített 300 pont felett?
+db1 = 0
+for i in range(1, len(verseny_adatok)):
+    if (int(verseny_adatok[i].split(",")[1]) > 300):
+        db1 += 1
+print(f"{db1} versenyző teljesített 300 pont felett")
+
+# 4. Van-e 0 pontos versenyző?
+
