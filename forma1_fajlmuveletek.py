@@ -54,5 +54,32 @@ for i in range(1, len(verseny_adatok)):
         db1 += 1
 print(f"{db1} versenyző teljesített 300 pont felett")
 
-# 4. Van-e 0 pontos versenyző?
+# 4.1 Van-e 0 pontos versenyző?
 
+cv = 1
+while cv < len(verseny_adatok) and int(verseny_adatok[cv].split(",")[1])>0:
+    cv += 1
+if cv <= len(verseny_adatok):
+    print("Van 0 pontos versenyző")
+else:
+    print("Nincs 0 pontos versenyző")
+
+# 4.2 Mindenki szerzett már pontot?
+
+cv = 1
+while cv < len(verseny_adatok) and int(verseny_adatok[cv].split(",")[1])>0:
+    cv += 1
+if cv >= len(verseny_adatok):
+    print("Mindenki szerzett pontot")
+else:
+    print("Nem mindenki szerzett pontot")
+
+# 5. Ki vezeti a szezont?
+
+maxe = int(verseny_adatok[1].split(",")[1])
+maxi = 1
+for i in range(2, len(verseny_adatok)):
+    if int(verseny_adatok[i].split(",")[1]) > maxe:
+        maxe = int(verseny_adatok[i].split(",")[1])
+        maxi = i
+print(f"{verseny_adatok[maxi].split(",")[0]} vezeti a szezont")
