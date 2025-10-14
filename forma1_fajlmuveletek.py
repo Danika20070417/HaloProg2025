@@ -83,3 +83,23 @@ for i in range(2, len(verseny_adatok)):
         maxe = int(verseny_adatok[i].split(",")[1])
         maxi = i
 print(f"{verseny_adatok[maxi].split(",")[0]} vezeti a szezont")
+
+# 6. Kinek van 90 pontja?
+
+b = 1
+while b < len(verseny_adatok) and int(verseny_adatok[b].split(",")[1]) != 90:
+    b += 1
+if b < len(verseny_adatok):
+    print(f"{verseny_adatok[b].split(",")[0]}-nak/nek van 90 pontja")
+else:
+    print("Nincs 90 pontos")
+
+# 7. Kik a Mercedes pilótái?
+
+merci = []
+db2 = 0
+for i in range(1, len(verseny_adatok)):
+    if verseny_adatok[i].strip().split(",")[2] == "Mercedes":
+        merci.append(verseny_adatok[i].split(",")[0])
+        db2 += 1
+print(merci)
