@@ -103,3 +103,18 @@ for i in range(1, len(verseny_adatok)):
         merci.append(verseny_adatok[i].split(",")[0])
         db2 += 1
 print(merci)
+
+# 8. Kik a Stake F1 Team Kick Sauber és RB F1 Team pilótái?
+
+dby = 0
+dbz = 0
+y = []
+z = []
+for i in range(1, len(verseny_adatok)):
+    if verseny_adatok[i].strip().split(",")[2] == "Stake F1 Team Kick Sauber" or verseny_adatok[i].strip().split(",")[2] == "RB F1 Team":
+        dby += 1
+        y.append(verseny_adatok[i].split(",")[0])
+    else:
+        dbz += 1
+        z.append(verseny_adatok[i].split(",")[0])
+print(y)
