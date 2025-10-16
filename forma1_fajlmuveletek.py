@@ -117,4 +117,35 @@ for i in range(1, len(verseny_adatok)):
     else:
         dbz += 1
         z.append(verseny_adatok[i].split(",")[0])
-print(y)
+print(y, z)
+
+# --------------------------------------------------------------------------------------------------------------------------------------
+
+# 9. Kik 1950 és 2024 top 3-as versenyzők?
+
+verseny_adatok19 = []
+verseny_adatok20 = []
+try:
+    with open("F1_1950-1999.csv", encoding="utf-8") as fajl:
+        
+        for sor in fajl:
+            verseny_adatok19.append(sor)
+
+except IOError as ex:
+    print(f"Fájl megnyitás hiba: {ex}")
+try:
+    with open("F1_2000-2024.csv", encoding="utf-8") as fajl:
+        
+        for sor in fajl:
+            verseny_adatok20.append(sor)
+
+except IOError as ex:
+    print(f"Fájl megnyitás hiba: {ex}")
+u = []
+for i in range(1, len(verseny_adatok19)):
+    u.append(verseny_adatok19[i])
+for j in range(1, len(verseny_adatok20)):
+    u.append(verseny_adatok20)
+print(u)
+
+# 10. 
