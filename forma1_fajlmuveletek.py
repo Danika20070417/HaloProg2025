@@ -148,4 +148,16 @@ for j in range(1, len(verseny_adatok20)):
     u.append(verseny_adatok20)
 print(u)
 
-# 10. 
+# 10. Kik voltak a dobogón a 20. században és a 21. században is?
+m = []
+dbm = 0
+for i in range(1, len(verseny_adatok19)):
+    j = 1
+    while j < len(verseny_adatok20) and verseny_adatok19[i].split(",")[2] != verseny_adatok20[j].split(",")[2]:
+        j +=1
+    if j < len(verseny_adatok20):
+        if verseny_adatok19[i].split(",")[2] not in m:
+            m.append(verseny_adatok19[i].split(",")[2])
+            dbm +=1
+for i in m:
+    print(i)
