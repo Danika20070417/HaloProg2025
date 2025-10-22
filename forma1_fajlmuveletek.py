@@ -161,3 +161,13 @@ for i in range(1, len(verseny_adatok19)):
             dbm +=1
 for i in m:
     print(i)
+    
+# 11. Növekvő pont sorrend
+for i in range(1, len(verseny_adatok)-1):
+    for j in range(i+1, len(verseny_adatok)):
+        if int(verseny_adatok[i].split(",")[1]) > int(verseny_adatok[j].split(",")[1]):
+            seged= verseny_adatok[i]
+            verseny_adatok[i] = verseny_adatok[j]
+            verseny_adatok[j] = seged
+for i in verseny_adatok:
+    print(i.strip())
